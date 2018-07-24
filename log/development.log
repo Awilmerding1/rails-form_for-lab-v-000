@@ -403,3 +403,31 @@ Processing by SchoolClassesController#show as HTML
   [1m[36mSchoolClass Load (0.2ms)[0m  [1mSELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered school_classes/show.html.erb within layouts/application (0.5ms)
 Completed 200 OK in 25ms (Views: 12.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/school_classes/1/edit" for 38.86.167.91 at 2018-07-24 15:37:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (5.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SchoolClassesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSchoolClass Load (0.2ms)[0m  SELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered school_classes/edit.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 315ms (Views: 291.8ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/school_classes/1" for 38.86.167.91 at 2018-07-24 15:37:10 +0000
+Processing by SchoolClassesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WCwurlDcEFbWdNTwdQF6mIQXyAlnaLM2O/Dz1qUObpUbR/xdgVtaz5XOYMTNCqCo8D8+iVaLn8SYn2XGbe5Pbg==", "school_class"=>{"title"=>"Math", "room_number"=>"2"}, "commit"=>"Update School class", "id"=>"1"}
+  [1m[36mSchoolClass Load (0.1ms)[0m  [1mSELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "school_classes" SET "room_number" = ? WHERE "school_classes"."id" = ?[0m  [["room_number", 2], ["id", 1]]
+  [1m[35m (7.3ms)[0m  commit transaction
+Redirected to http://67.205.165.109:46455/school_classes/1
+Completed 302 Found in 13ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/school_classes/1" for 38.86.167.91 at 2018-07-24 15:37:10 +0000
+Processing by SchoolClassesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchoolClass Load (0.1ms)[0m  [1mSELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered school_classes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
